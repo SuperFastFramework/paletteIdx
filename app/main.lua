@@ -3,7 +3,6 @@ require("palettes")
 function love.load(arg)
 	love.graphics.setDefaultFilter("nearest", "nearest")
 	love.graphics.setFont(love.graphics.newFont("assets/pico8.ttf", 16))
-	sfx0 = love.audio.newSource("assets/sfx0.ogg")
 	sfx1 = love.audio.newSource("assets/sfx1.ogg")
 	palIdx = 1
 	sfx1:play()
@@ -15,7 +14,6 @@ function love.keyreleased(key)
 	elseif key == "right" then
 		palIdx = (palIdx + 1) % (#sff.palettes.names+1)
 	end
-	sfx0:play()
 	if palIdx == 0 then palIdx = 1 end
  end
 
